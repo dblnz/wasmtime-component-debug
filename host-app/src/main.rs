@@ -42,6 +42,7 @@ fn main() -> anyhow::Result<()> {
     config.debug_info(true);           // Enable debug info
     config.wasm_backtrace_details(wasmtime::WasmBacktraceDetails::Enable);
     config.cranelift_debug_verifier(true);  // Enable Cranelift verification
+    config.cranelift_opt_level(OptLevel::None);
     
     let engine = Engine::new(&config)?;
     println!("🚀 Engine created with debug configuration");
